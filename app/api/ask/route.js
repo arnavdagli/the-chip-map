@@ -1,4 +1,10 @@
+import events from "@/data/events.json";
 import { streamGroqChat } from "@/lib/groq";
+
+const timelineContext = [...events]
+  .sort((a, b) => a.year - b.year)
+  .map((e) => `${e.year}: ${e.title} — ${e.shortDescription}`)
+  .join("\n");
 
 export async function POST(request) {
   const apiKey = process.env.GROQ_API_KEY;
@@ -17,33 +23,35 @@ export async function POST(request) {
     return Response.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
-  const { title, year, shortDescription, messages } = body;
+  const { question, messages } = body;
 
-  if (!title || !year || !shortDescription || !messages?.length) {
+  if (!question?.trim() && !messages?.length) {
     return Response.json(
-      {
-        error:
-          "Missing required fields: title, year, shortDescription, messages",
-      },
+      { error: "Missing required field: question" },
       { status: 400 }
     );
   }
 
-  const systemPrompt = `You are an educational assistant answering follow-up questions about a semiconductor industry event. The reader is technically literate but not an expert.
+  const conversation = messages?.length
+    ? messages
+    : [{ role: "user", content: question.trim() }];
 
-Event: ${title} (${year})
-Context: ${shortDescription}
+  const systemPrompt = `You are an educational assistant answering questions about semiconductor industry history. The reader is technically literate but not an expert.
+
+You have access to this curated timeline (1947–present):
+
+${timelineContext}
 
 Rules:
 - Use neutral, factual language only.
-- Base answers on the event context above. Do not invent statistics, quotes, or outcomes.
-- If you are unsure or the question goes beyond the context, say you cannot confirm from this entry.
-- Keep answers to 2-4 sentences.
-- If asked something unrelated to this event or semiconductors, briefly redirect.`;
+- Prefer events and descriptions from the timeline above. Do not invent facts, statistics, or quotes.
+- If a question cannot be answered from the timeline, say that clearly and avoid speculation.
+- Keep answers to 3-5 sentences.
+- If asked something outside semiconductors, briefly redirect.`;
 
   const groqMessages = [
     { role: "system", content: systemPrompt },
-    ...messages.map((m) => ({
+    ...conversation.map((m) => ({
       role: m.role,
       content: m.content,
     })),
@@ -53,7 +61,7 @@ Rules:
     const result = await streamGroqChat({
       apiKey,
       messages: groqMessages,
-      maxTokens: 250,
+      maxTokens: 350,
     });
 
     if (result.error) {

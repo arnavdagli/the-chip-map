@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import events from "@/data/events.json";
+import AskBar from "./AskBar";
 import FilterBar from "./FilterBar";
 import TimelineNode from "./TimelineNode";
 import SidePanel from "./SidePanel";
@@ -38,10 +39,11 @@ export default function Timeline() {
           <h1 className="font-serif text-2xl text-white sm:text-4xl">
             The Chip Map
           </h1>
-          <p className="mt-2 hidden max-w-2xl text-sm leading-relaxed text-white/50 sm:block">
-            An interactive timeline of the inventions, companies, trade wars,
-            and policy decisions that shaped global semiconductor power.
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/50">
+            A curated educational timeline of semiconductor inventions,
+            companies, trade disputes, and policy milestones.
           </p>
+          <AskBar />
         </div>
       </header>
 
@@ -79,9 +81,13 @@ export default function Timeline() {
       </main>
 
       <footer className="shrink-0 border-t border-white/10 px-4 py-3 sm:px-6 sm:py-4">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl space-y-1">
           <p className="font-mono text-xs text-white/25">
-            Currently reading:{" "}
+            Educational project · curated timeline · not legal, financial, or
+            professional advice
+          </p>
+          <p className="font-mono text-xs text-white/25">
+            Inspired by{" "}
             <span className="text-white/40">Chip War</span> — Chris Miller
           </p>
         </div>

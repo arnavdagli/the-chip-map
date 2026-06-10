@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 const siteDescription =
-  "An interactive geopolitical timeline of the semiconductor industry from 1947 to today.";
+  "A curated educational timeline of semiconductor industry history from 1947 to today.";
 
 export const metadata = {
   metadataBase: new URL("https://the-chip-map.vercel.app"),

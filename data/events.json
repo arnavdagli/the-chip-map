@@ -10,9 +10,9 @@
   {
     "id": "1957-fairchild",
     "year": 1957,
-    "title": "The Traitorous Eight Found Fairchild",
+    "title": "Fairchild Semiconductor Founded",
     "category": "company",
-    "shortDescription": "Eight researchers quit William Shockley's lab and, backed by Fairchild Camera and Instrument, launch Fairchild Semiconductor — the company that would spawn Intel, AMD, and dozens of Silicon Valley startups.",
+    "shortDescription": "Eight researchers leave William Shockley's lab and, backed by Fairchild Camera and Instrument, launch Fairchild Semiconductor — a company later associated with Intel, AMD, and many Silicon Valley startups.",
     "country": "US"
   },
   {
@@ -74,9 +74,9 @@
   {
     "id": "1985-us-japan-friction",
     "year": 1985,
-    "title": "US-Japan Semiconductor Trade War Begins",
+    "title": "US Files Semiconductor Trade Complaint Against Japan",
     "category": "war",
-    "shortDescription": "The US Semiconductor Industry Association files a Section 301 complaint alleging Japan dumps chips below cost and closes its market to American firms.",
+    "shortDescription": "The US Semiconductor Industry Association files a Section 301 complaint alleging below-cost pricing by Japanese chipmakers and limited market access for American firms in Japan.",
     "country": "US"
   },
   {
@@ -84,7 +84,7 @@
     "year": 1987,
     "title": "TSMC Founded",
     "category": "company",
-    "shortDescription": "Morris Chang launches Taiwan Semiconductor with a blank-check mandate from the Taiwanese government, pioneering the pure-play foundry model.",
+    "shortDescription": "Morris Chang launches Taiwan Semiconductor with government backing, establishing the pure-play foundry model of manufacturing chips designed by other companies.",
     "country": "TW"
   },
   {
@@ -116,7 +116,7 @@
     "year": 1993,
     "title": "Intel Pentium Launched",
     "category": "milestone",
-    "shortDescription": "Intel ships the Pentium, its fifth-generation x86 processor. It cements Intel's dominance of the PC market and generates record revenues.",
+    "shortDescription": "Intel ships the Pentium, its fifth-generation x86 processor, strengthening the company's position in the PC processor market.",
     "country": "US"
   },
   {
@@ -128,12 +128,36 @@
     "country": "KR"
   },
   {
+    "id": "2000-dotcom-bust",
+    "year": 2000,
+    "title": "Dot-Com Bust Reduces Semiconductor Capex",
+    "category": "milestone",
+    "shortDescription": "After years of fab expansion during the internet boom, the dot-com downturn reduces semiconductor demand. Memory and logic makers cut capital spending, and several firms merge or exit the market in the years that follow.",
+    "country": "US"
+  },
+  {
+    "id": "2001-itanium",
+    "year": 2001,
+    "title": "Intel and HP Launch Itanium",
+    "category": "milestone",
+    "shortDescription": "Intel and HP introduce Itanium, a 64-bit server architecture intended for high-end systems. High cost and limited software compatibility slow adoption, while x86 and ARM-based designs continue to expand in servers and other markets.",
+    "country": "US"
+  },
+  {
     "id": "2001-asml-euv",
     "year": 2001,
     "title": "ASML Takes the Lead on EUV",
     "category": "invention",
     "shortDescription": "Building on 1990s research from the US national labs' EUV LLC consortium, ASML commits to commercializing extreme ultraviolet lithography — a bet requiring two decades and billions of dollars, but essential for sub-7nm chips.",
     "country": "NL"
+  },
+  {
+    "id": "2007-iphone-arm",
+    "year": 2007,
+    "title": "iPhone Launches with ARM-Based Processor",
+    "category": "milestone",
+    "shortDescription": "Apple ships the iPhone with a Samsung-fabricated ARM-based processor. Growth in smartphones increases demand for mobile chips and contributes to wider use of ARM designs and foundry capacity in Asia.",
+    "country": "US"
   },
   {
     "id": "2014-china-ic-fund",
@@ -148,7 +172,7 @@
     "year": 2015,
     "title": "Made in China 2025 Announced",
     "category": "policy",
-    "shortDescription": "China unveils an industrial plan targeting 70% self-sufficiency in core components and materials, including chips, by 2025 — a goal it would fall well short of — triggering alarm in Washington and allied capitals.",
+    "shortDescription": "China unveils an industrial plan targeting 70% self-sufficiency in core components and materials, including chips, by 2025. The plan draws scrutiny from policymakers in the United States and allied countries.",
     "country": "CN"
   },
   {
@@ -156,7 +180,7 @@
     "year": 2019,
     "title": "Huawei Added to US Entity List",
     "category": "war",
-    "shortDescription": "The US Commerce Department restricts American firms from supplying Huawei, beginning a campaign to decouple Chinese telecom giants from Western technology.",
+    "shortDescription": "The US Commerce Department adds Huawei to the Entity List, restricting US firms from supplying the company without a license.",
     "country": "US"
   },
   {
@@ -164,7 +188,7 @@
     "year": 2020,
     "title": "TSMC 5nm Mass Production",
     "category": "milestone",
-    "shortDescription": "TSMC begins high-volume production of 5nm chips for Apple and others, extending its lead as the world's most advanced contract foundry.",
+    "shortDescription": "TSMC begins high-volume production of 5nm chips for Apple and other customers at its contract foundries.",
     "country": "TW"
   },
   {
@@ -172,7 +196,7 @@
     "year": 2020,
     "title": "US Cuts Huawei Off from TSMC",
     "category": "war",
-    "shortDescription": "New export rules bar TSMC from fabricating chips for Huawei using American equipment, crippling the Chinese firm's access to advanced processors.",
+    "shortDescription": "New US export rules restrict TSMC from fabricating chips for Huawei when using American equipment, limiting Huawei's access to advanced processors made offshore.",
     "country": "US"
   },
   {
@@ -188,7 +212,7 @@
     "year": 2023,
     "title": "Netherlands Restricts ASML's DUV Exports to China",
     "category": "war",
-    "shortDescription": "The Netherlands, under US pressure, blocks ASML from exporting its most advanced deep ultraviolet (DUV) immersion lithography tools to China — EUV machines were never licensed for export there in the first place.",
+    "shortDescription": "The Netherlands restricts ASML from exporting certain advanced deep ultraviolet (DUV) immersion lithography tools to China. EUV systems had already been subject to export licensing requirements for China.",
     "country": "NL"
   },
   {
@@ -204,7 +228,7 @@
     "year": 2024,
     "title": "AI Chip Export Controls Tightened",
     "category": "war",
-    "shortDescription": "The US expands its October 2023 restrictions on advanced AI chips like NVIDIA's H100, closing loopholes and extending license requirements beyond China to slow military AI applications.",
+    "shortDescription": "The US expands October 2023 restrictions on advanced AI chips such as NVIDIA's H100, tightening license requirements for sales to China and certain other destinations.",
     "country": "US"
   },
   {
@@ -212,7 +236,7 @@
     "year": 2025,
     "title": "TSMC Arizona Fab Operational",
     "category": "milestone",
-    "shortDescription": "TSMC's first US advanced fab in Phoenix begins volume production of 4nm chips, marking a major shift in global semiconductor geography driven by CHIPS Act subsidies.",
+    "shortDescription": "TSMC reports volume production of 4nm chips at its first advanced fab in Phoenix, Arizona, supported in part by CHIPS Act subsidies.",
     "country": "US"
   }
 ]

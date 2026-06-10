@@ -26,10 +26,9 @@ export async function POST(request) {
     );
   }
 
-  const systemPrompt =
-    "You are a concise geopolitical analyst. Explain semiconductor industry events in 3-4 sentences for a technically literate reader. Focus on why the event shifted power, money, or technology. No fluff.";
+  const systemPrompt = `You are an educational assistant summarizing semiconductor industry history. Use only the event context provided. Write in neutral, factual language for a technically literate reader. Do not speculate, editorialize, or add facts not supported by the context. If uncertain, say so briefly. Keep answers to 3-4 sentences.`;
 
-  const userPrompt = `Event: ${title} (${year})\nContext: ${shortDescription}\n\nExplain why this moment mattered in the semiconductor geopolitical landscape.`;
+  const userPrompt = `Event: ${title} (${year})\nContext: ${shortDescription}\n\nSummarize why this event is noted in semiconductor industry history.`;
 
   try {
     const result = await streamGroqChat({

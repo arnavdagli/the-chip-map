@@ -249,8 +249,11 @@ export default function SidePanel({ event, onClose }) {
           {explanation && (
             <div className="space-y-6">
               <div>
-                <p className="mb-3 font-mono text-xs uppercase tracking-wider text-white/30">
-                  Geopolitical significance
+                <p className="mb-1 font-mono text-xs uppercase tracking-wider text-white/30">
+                  AI-generated summary
+                </p>
+                <p className="mb-3 font-mono text-[10px] text-white/25">
+                  Verify independently · based on this event entry only
                 </p>
                 <p className="text-sm leading-relaxed text-white/80">
                   {explanation}
@@ -292,8 +295,11 @@ export default function SidePanel({ event, onClose }) {
             onSubmit={sendChatMessage}
             className="shrink-0 border-t border-white/10 p-4"
           >
-            <p className="mb-2 font-mono text-[10px] uppercase tracking-wider text-white/30">
+            <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-white/30">
               Ask about this event
+            </p>
+            <p className="mb-2 font-mono text-[10px] text-white/25">
+              AI-generated · may contain errors
             </p>
             <div className="flex gap-2">
               <input
