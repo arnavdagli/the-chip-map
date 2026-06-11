@@ -73,4 +73,4 @@ lib/
 
 ## Disclaimer
 
-This is an educational project. AI-generated summaries and answers are labeled as such in the UI and may contain errors — verify independently.
+This is a personal, educational project and is not affiliated with, endorsed by, or representative of any company, government, or organization mentioned. All content — including the curated timeline entries and especially the AI-generated summaries and answers (which are labeled as such in the UI) — is provided "as is" for educational purposes only, may contain errors or omissions, and should not be relied upon for research, financial, legal, or policy decisions. Verify all information independently against primary sources.
