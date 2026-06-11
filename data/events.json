@@ -28,7 +28,7 @@
     "year": 1959,
     "title": "Noyce's Planar Integrated Circuit",
     "category": "invention",
-    "shortDescription": "Robert Noyce at Fairchild develops the planar process, enabling mass production of ICs with interconnected layers — the foundation of modern chip fabrication.",
+    "shortDescription": "Building on Jean Hoerni's planar process, Robert Noyce at Fairchild conceives the monolithic integrated circuit — components interconnected by metal lines on a single silicon chip, the foundation of modern mass-produced ICs.",
     "country": "US"
   },
   {
@@ -68,7 +68,7 @@
     "year": 1983,
     "title": "Japan Overtakes US in DRAM",
     "category": "milestone",
-    "shortDescription": "Japanese firms capture over 70% of the global DRAM market. NEC, Hitachi, and Fujitsu undercut American rivals with higher quality and lower prices.",
+    "shortDescription": "Having taken the lead in 64K DRAMs in 1981, NEC, Hitachi, and Fujitsu out-compete American rivals on quality and price. Japan's share of the DRAM market keeps climbing, reaching roughly 80% by the late 1980s.",
     "country": "JP"
   },
   {

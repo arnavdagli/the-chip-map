@@ -51,7 +51,8 @@ export default function AskBar() {
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: updatedMessages }),
+        // Keep within the server's conversation-length limit
+        body: JSON.stringify({ messages: updatedMessages.slice(-12) }),
         signal: controller.signal,
       });
 
@@ -107,6 +108,7 @@ export default function AskBar() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              maxLength={1000}
               placeholder="Ask anything about chip geopolitics…"
               disabled={loading}
               className="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/5 px-3 py-2 font-mono text-xs text-white placeholder:text-white/25 outline-none focus:border-violet-500/40 sm:text-sm"

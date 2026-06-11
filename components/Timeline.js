@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import events from "@/data/events.json";
 import AskBar from "./AskBar";
 import FilterBar from "./FilterBar";
@@ -19,15 +19,11 @@ export default function Timeline() {
       .sort((a, b) => a.year - b.year);
   }, [activeCategory, activeCountry]);
 
-  // Close the panel if its event gets filtered out of the timeline
-  useEffect(() => {
-    if (
-      selectedEvent &&
-      !filteredEvents.some((e) => e.id === selectedEvent.id)
-    ) {
-      setSelectedEvent(null);
-    }
-  }, [filteredEvents, selectedEvent]);
+  // Hide the panel if its event gets filtered out of the timeline
+  const visibleSelectedEvent =
+    selectedEvent && filteredEvents.some((e) => e.id === selectedEvent.id)
+      ? selectedEvent
+      : null;
 
   return (
     <div className="flex h-dvh max-w-[100vw] flex-col overflow-x-hidden overflow-y-hidden bg-[#0a0a0a] md:h-screen">
@@ -77,7 +73,7 @@ export default function Timeline() {
                     key={event.id}
                     event={event}
                     index={index}
-                    isActive={selectedEvent?.id === event.id}
+                    isActive={visibleSelectedEvent?.id === event.id}
                     onClick={setSelectedEvent}
                   />
                 ))}
@@ -96,9 +92,11 @@ export default function Timeline() {
         </div>
       </footer>
 
-      {selectedEvent && (
+      {visibleSelectedEvent && (
         <SidePanel
-          event={selectedEvent}
+          // Remount per event so all panel state (explanation, chat) resets
+          key={visibleSelectedEvent.id}
+          event={visibleSelectedEvent}
           onClose={() => setSelectedEvent(null)}
         />
       )}

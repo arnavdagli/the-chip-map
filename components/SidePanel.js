@@ -30,23 +30,18 @@ export default function SidePanel({ event, onClose }) {
   const abortRef = useRef(null);
   const closeButtonRef = useRef(null);
 
+  // The panel is remounted per event (via `key` in Timeline), so state is
+  // fresh on every open; this only handles focus and in-flight cleanup.
   useEffect(() => {
-    setExplanation("");
-    setError(null);
-    setFetched(false);
-    setLoading(false);
-    setChatMessages([]);
-    setChatInput("");
-    setChatLoading(false);
     closeButtonRef.current?.focus();
 
-    // Cancel any in-flight AI request when switching events or unmounting,
-    // so a stale stream can't paint onto the wrong event.
+    // Cancel any in-flight AI request on unmount so a stale stream
+    // can't paint onto the wrong event.
     return () => {
       abortRef.current?.abort();
       abortRef.current = null;
     };
-  }, [event?.id]);
+  }, []);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -79,11 +74,7 @@ export default function SidePanel({ event, onClose }) {
       const res = await fetch("/api/explain", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title: event.title,
-          year: event.year,
-          shortDescription: event.shortDescription,
-        }),
+        body: JSON.stringify({ id: event.id }),
         signal: controller.signal,
       });
 
@@ -125,10 +116,9 @@ export default function SidePanel({ event, onClose }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          title: event.title,
-          year: event.year,
-          shortDescription: event.shortDescription,
-          messages: updatedMessages,
+          id: event.id,
+          // Keep within the server's conversation-length limit
+          messages: updatedMessages.slice(-12),
         }),
         signal: controller.signal,
       });
@@ -306,6 +296,7 @@ export default function SidePanel({ event, onClose }) {
                 type="text"
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
+                maxLength={1000}
                 placeholder="e.g. Who benefited most?"
                 disabled={chatLoading}
                 className="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 font-mono text-xs text-white placeholder:text-white/25 outline-none focus:border-white/25"

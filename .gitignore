@@ -17,6 +17,7 @@
 /build
 
 # misc
+.npm-cache-tmp/
 .DS_Store
 *.pem
 *.mov
