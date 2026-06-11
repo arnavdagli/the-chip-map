@@ -90,8 +90,8 @@ export default function Timeline() {
       <footer className="shrink-0 border-t border-white/10 px-4 py-2 sm:px-6">
         <div className="mx-auto max-w-7xl">
           <p className="font-mono text-[10px] leading-relaxed text-white/25 sm:text-xs">
-            Educational project · not legal or professional advice · inspired by{" "}
-            <span className="text-white/40">Chip War</span>
+            Educational project · inspired by{" "}
+            <span className="text-white/40">Chip War</span> — Chris Miller
           </p>
         </div>
       </footer>
